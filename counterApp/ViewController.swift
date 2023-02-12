@@ -11,18 +11,18 @@ class ViewController: UIViewController {
     
     private var count: Int = 0
     
-    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet private weak var textLabel: UILabel!
     
-    @IBOutlet weak var someButton: UIButton!
+    @IBOutlet private weak var clickButton: UIButton!
     
-    @IBAction func actionButton(_ sender: Any) {
+    @IBOutlet private weak var eraseButton: UIButton!
+    
+    @IBAction private func actionButton(_ sender: Any) {
         count += 1
         textLabel.text = "Значение счётчика: \(count)"
     }
     
-    @IBOutlet weak var eraseButton: UIButton!
-    
-    @IBAction func eraseValueButton(_ sender: Any) {
+    @IBAction private func eraseValueButton(_ sender: Any) {
         count = 0
         textLabel.text = "Значение счётчика: \(count)"
     }
@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         textLabel.text = "Значение счётчика: \(count)"
         
-        someButton.backgroundColor = .gray
-        someButton.tintColor = .white
-        someButton.setTitle("Click me", for: .normal)
+        clickButton.backgroundColor = .gray
+        clickButton.tintColor = .white
+        clickButton.setTitle("Click me", for: .normal)
         
         eraseButton.backgroundColor = .red
         eraseButton.tintColor = .white
